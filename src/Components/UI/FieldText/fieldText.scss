@@ -1,0 +1,19 @@
+@import "../baseStyle.scss";
+
+.fieldText {
+display: flex;
+flex-wrap: nowrap;
+cursor: text;
+}
+
+.fieldText__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  color: inherit;
+  line-height: inherit;
+  font: inherit;
+}

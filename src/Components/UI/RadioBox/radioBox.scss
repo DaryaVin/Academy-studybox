@@ -1,0 +1,65 @@
+@import "../baseStyle.scss";
+
+.radioBox {
+  @include baseText;
+  color: $color1Opacity50;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  * {
+    cursor: pointer;
+  }
+}
+.radioBox__field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  &.radioBox__field_checked + .radioBox__label {
+    color: $color1Opacity75;
+  }
+  .radioBox__button:checked ~ .radioBox__checkmark {
+
+    border-color: $color2;
+    .radioBox__innerPoint {
+      display: inline-block;
+    }
+  }
+  .radioBox__button:focus  ~ .radioBox__checkmark  {
+    outline: auto;
+  }
+}
+.radioBox__button {
+  outline: none;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+}
+
+.radioBox__checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  // z-index: -1;
+  border: 1px solid $color1Opacity25;
+  border-radius: 50%;
+}
+.radioBox__innerPoint {
+  display: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  @include linearGradient(background, $color2, $color2Gradiend);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radioBox__label{
+  font: inherit;
+  color: inherit;
+  padding-left: 10px;
+}

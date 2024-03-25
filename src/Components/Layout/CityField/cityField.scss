@@ -1,0 +1,40 @@
+@import "../../UI/baseStyle.scss";
+
+.cityField {
+  position: relative;
+}
+.cityField__input {
+  width: 100%;
+}
+.cityField__cityOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  &.card {
+    padding: 0;
+  }
+}
+.cityField__cityOptionsList {
+  list-style-type: none;
+  width: 100%;
+}
+.cityField__cityOptionsItem {
+  button {
+    width: 100%;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: $colorBcg;
+    color: inherit;
+
+    &:hover, &:focus {
+      background-color: $color2;
+    }
+  }
+}
+.cityField__cityCode {
+  color: $color1Opacity25;
+}

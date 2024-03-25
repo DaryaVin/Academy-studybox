@@ -1,0 +1,120 @@
+// --------------------- Variables --------------------- //
+$color1: #1F2041;
+$color1Opacity75: rgba(31, 32, 65, 0.75);
+$color1Opacity50: rgba(31, 32, 65, 0.5);
+$color1Opacity25: rgba(31, 32, 65, 0.25);
+$color1Opacity10: rgba(31, 32, 65, 0.10);
+$color1Opacity05: rgba(31, 32, 65, 0.05);
+$color2: #2196F3;
+$color2Gradiend: #8BA4F9;
+$color3: #6FCF97;
+$color3Gradiend: #66D2EA;
+$colorBcg: #FFFFFF;
+$colorError: crimson;
+$width: 320px;
+$width_size_s: 150px;
+$width_size_m: 270px;
+$width_size_l: 320px;
+$max_width: 1920px;
+$min_width: $width + 40px;
+$control_width1: 1024px;
+$control_width2: 768px;
+
+// --------------------- font face ---------------------- //
+@font-face {
+  font-family: Quicksand;
+  src: url("../../Assets/font/Quicksand/Quicksand-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Quicksand;
+  src: url("../../Assets/font/Quicksand/static/Quicksand-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url("../../Assets/font/Montserrat/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: Montserrat;
+  src: url("../../Assets/font/Montserrat/Montserrat-Bold.ttf");
+  font-weight: bold;
+}
+
+// --------------------- Color mixins ---------------------- //
+@mixin linearGradient($property, $color1, $color2) {
+  #{$property}: linear-gradient(180deg, $color1 0%, $color2 100%);
+}
+
+@mixin linearGradientForSVG($color1, $color2, $offset1: 0, $offset2: 100%) {
+
+    stop:first-child {
+      offset: $offset1;
+      stop-color: $color1;
+    }
+    stop:last-child {
+      offset: $offset2;
+      stop-color: $color2;
+  }
+}
+
+// --------------------- Text mixins ---------------------- //
+@mixin baseText {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+@mixin h1 {
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: $color1;
+}
+@mixin h2 {
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: $color1;
+}
+@mixin h3 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $color1;
+}
+
+// --------------------- Base mixins ---------------------- //
+// @mixin field {
+//   box-sizing: border-box;
+//   border: 1px solid $color1Opacity25;
+//   border-radius: 4px;
+//   padding: 12px 15px;
+//   // width: $width;
+//   max-width: $width;
+//   outline: none;
+//   @include baseText;
+//   line-height: 18px;
+//   color: $color1Opacity75;
+//   &.empty,
+//   .empty {
+//     color: $color1Opacity25;
+//     * {
+//       color: inherit;
+//     }
+//   }
+//   &::placeholder,
+//   *::placeholder {
+//     color: $color1Opacity25;
+//   }
+//   &:hover, &:focus, &:focus-within {
+//     border-color: $color1Opacity50;
+//   }
+// }

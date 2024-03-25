@@ -1,0 +1,36 @@
+@import "../../UI/baseStyle.scss";
+
+@media (max-width: $control_width2) {
+  .transfersSwitch__listItem {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    gap: 15px;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: $control_width2) {
+  .transfersSwitch__listItem {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    gap: 15px;
+    justify-content: start;
+  }
+}
+.transfersSwitch__wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: $width_size_m ;
+  // width: $width_size_m;
+  gap: 15px;
+  // justify-content: start;
+}
+
+.transfersSwitch {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: start;
+}

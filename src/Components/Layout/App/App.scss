@@ -1,0 +1,103 @@
+@import "../../UI/baseStyle.scss";
+
+@media (max-width: $control_width2) {
+  .wrapApp {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .App__header {
+    display: flex;
+    justify-content: center;
+  }
+  .App__SearchForm {
+  }
+  .App__SortingSwitch {
+  }
+  
+  .App__TransfersSwitch {
+  }
+  
+  .App__AirTicketContainer {
+  }
+}
+@media (min-width: $control_width2) {
+  .wrapApp {
+    max-width: $max_width;
+    min-width: $min_width;
+    display: grid;
+    grid-template-columns: $width_size_m 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas: 
+    "H H"
+    "A A"
+    "B C"
+    "B D"
+    ;
+    gap: 20px;
+  }
+  .App__header {
+    grid-area: H;
+    display: flex;
+    justify-content: center;
+  }
+  .App__SearchForm {
+    grid-area: A;
+  }
+  .App__SortingSwitch {
+    grid-area: C;
+  }
+  
+  .App__TransfersSwitch {
+    grid-area: B;
+  }
+  
+  .App__AirTicketContainer {
+    grid-area: D;
+  }
+}
+
+
+
+
+.App {
+  display: flex;
+  justify-content: center;
+  background-color: #F3F7FA;
+  min-height: 100vh;
+}
+
+// .wrapApp {
+//   max-width: $max_width;
+//   min-width: $min_width;
+//   display: grid;
+//   grid-template-columns: $width_size_m 1fr;
+//   grid-template-rows: auto auto auto 1fr;
+//   grid-template-areas: 
+//   "H H"
+//   "A A"
+//   "B C"
+//   "B D"
+//   ;
+//   gap: 20px;
+// }
+// .App__header {
+//   grid-area: H;
+//   display: flex;
+//   justify-content: center;
+// }
+// .App__SearchForm {
+//   grid-area: A;
+// }
+// .App__SortingSwitch {
+//   grid-area: C;
+// }
+
+// .App__TransfersSwitch {
+//   grid-area: B;
+// }
+
+// .App__AirTicketContainer {
+//   grid-area: D;
+// }

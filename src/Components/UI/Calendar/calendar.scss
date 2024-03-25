@@ -1,0 +1,178 @@
+@import "../baseStyle.scss";
+
+$width: 280px;
+.calendarCard {
+  width: $width;
+}
+.calendarCard__buttonBox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-top: 10px;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 30px;
+  .react-calendar__navigation__arrow {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background-color: $colorBcg;
+    outline-width: 0;
+    border: 0;
+    cursor: pointer;
+    &:focus {
+      outline-color: $color1;
+      outline-width: 1px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      // @include linearGradient(background, $color2, $color2Gradiend);
+      border: 2px solid $color2;
+      border-top: 0;
+      border-left: 0;
+      transform-origin: bottom right;
+    }
+    &.react-calendar__navigation__next-button::before {
+      // -webkit-mask: url("../../img/arrow_forward.svg") no-repeat center;
+      // -moz-mask: url("../../img/arrow_forward.svg") no-repeat center;
+      // mask: url("../../img/arrow_forward.svg") no-repeat center;
+      transform: rotate(-45deg);
+    }
+    &.react-calendar__navigation__prev-button::before {
+      // -webkit-mask: url("../../img/arrow_back.svg") no-repeat center;
+      // -moz-mask: url("../../img/arrow_back.svg") no-repeat center;
+      // mask: url("../../img/arrow_back.svg") no-repeat center;
+      transform: rotate(135deg)
+    }
+  }
+  .react-calendar__navigation__label {
+    height: 24px;
+    padding: 0;
+    background-color: $colorBcg;
+    border: 0;
+    .react-calendar__navigation__label__labelText {
+      @include h2;
+        color: $color1;
+        text-align: center;
+        display: inline-block;
+        justify-content: center;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+    }
+  }
+}
+.react-calendar__viewContainer {
+  width: $width;
+  height: $width;
+  padding: 0;
+  margin: 0;
+  .react-calendar__month-view__weekdays__weekday,
+  .react-calendar__tile {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: $width/7;
+    height: $width/7;
+    background-color: $colorBcg;
+    border: 0;
+  }
+  .react-calendar__month-view__weekdays__weekday {
+    color: $color2;
+    font-size: 12px;
+    font-weight: bold;
+    & abbr[title] {
+      text-decoration: none;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+  .react-calendar__tile {
+    @include h3;
+    color: $color1Opacity50;
+    font-weight: normal;
+    position: relative;
+    &:hover:not(:disabled) {
+      abbr {
+        position: absolute;
+        top: 0;
+        bottom: 0;right: 0;left: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        @include linearGradient(background, $color3, $color3Gradiend);
+        border-radius: 50%;
+        color: $colorBcg;
+        font-weight: bold;
+      }
+    }
+    &.react-calendar__month-view__days__day--neighboringMonth,
+    &:disabled {
+      color: $color1Opacity25;
+    }
+    &.react-calendar__tile--range:not(.react-calendar__tile--rangeStart, .react-calendar__tile--rangeEnd) {
+      background-color:  transparentize($color2,0.75);   
+    }
+    &.react-calendar__tile--rangeStart, 
+    &.react-calendar__tile--rangeEnd {
+      abbr {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        @include linearGradient(background, $color2, $color2Gradiend);
+        border-radius: 50%;
+        color: $colorBcg;
+        font-weight: bold;
+        z-index: 0;
+        &::before {
+          content: "";
+          background-color:  transparentize($color2,0.75);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0%;
+          z-index: -1;
+        }
+      }
+    }
+    &.react-calendar__tile--rangeStart abbr{
+      &::before {
+        left: 50%;
+        right: 0;
+      }
+    }
+    &.react-calendar__tile--rangeEnd abbr{
+      &::before {
+        left: 0;
+        right: 50%;
+      }
+    }
+    &.react-calendar__tile--rangeBothEnds abbr{
+      &::before {
+        left: 0%;
+        right: 100%;
+      }
+    }
+    
+  }
+}

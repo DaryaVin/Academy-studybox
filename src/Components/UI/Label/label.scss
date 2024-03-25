@@ -1,0 +1,9 @@
+@import "../baseStyle.scss";
+
+.label {
+
+}
+.label__text {
+  @include h3;
+  text-align: inherit;
+}

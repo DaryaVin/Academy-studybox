@@ -1,0 +1,31 @@
+@import "../baseStyle.scss";
+
+.card  {
+  display: inline-flex;
+  // position: relative;
+  box-sizing: border-box;
+  background-color: $colorBcg;
+  border: 1px solid $color1Opacity25;
+  border-radius: 4px;
+  padding: 12px 15px;
+  outline: none;
+  @include baseText;
+  line-height: 18px;
+  color: $color1Opacity75;
+  &::placeholder,
+  *::placeholder {
+    color: $color1Opacity25;
+  }
+  &:hover, &:focus, &:focus-within {
+    border-color: $color1Opacity50;
+  }
+  &.card_disabled {
+    background-color: $color1Opacity05;
+    * {
+      background-color: transparent;
+    }
+    &:hover {
+      border-color: $color1Opacity25;
+    }
+  }
+}

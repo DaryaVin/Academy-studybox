@@ -1,0 +1,35 @@
+@import "../../UI/baseStyle.scss";
+
+.sortingSwitch {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.sortingSwitch__item {
+  position: relative;
+  padding: 12px;
+  border: 1px solid $color1Opacity25;
+  display: flex;
+  justify-content: center;
+  @include h3;
+  cursor: pointer;
+
+  &:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+  &:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+  &:hover, &:focus-within {
+    outline: 1px solid $color1;
+  }
+  &.sortingSwitch__item_checked {
+    background-color: $color2;
+    color: $colorBcg
+  }
+  input {
+    opacity: 0;
+  }
+}

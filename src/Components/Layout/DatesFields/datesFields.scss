@@ -1,0 +1,46 @@
+@import "../../UI/baseStyle.scss";
+.datesFields {
+  min-width: $width;
+
+  position: relative;
+}
+.datesFields__fields {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr;
+}
+.datesFields__dateWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.datesFields__calendar {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 100%;
+  left: 0;right: 0; 
+  z-index: 100;
+  background-color: $colorBcg;
+}
+.datesFields__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  path{
+    stroke: $color2;
+  }
+}
+.datesFields__placeholder {
+  color: $color1Opacity25;
+  width: 100%;
+  display: flex;
+  &.datesFields__placeholder_end {
+    justify-content: end;
+  }
+  &.datesFields__placeholder_start {
+    justify-content: start;
+  }
+}

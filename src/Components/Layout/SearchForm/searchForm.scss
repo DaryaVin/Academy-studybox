@@ -1,0 +1,114 @@
+@import "../../UI/baseStyle.scss";
+
+@media (max-width: $control_width1) and (min-width: $control_width2) {
+  .searchForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr ;
+  grid-template-areas: 
+  "Origin Destination"
+  "Dates Btn"
+  ;
+  }
+  .searchForm__origin {
+    grid-area: "Origin";
+  }
+  
+  .searchForm__destination {
+    grid-area: "Destination";
+  
+  }
+  .searchForm__dates {
+    grid-area: "Dates";
+  
+  }
+  .searchForm__btnSubmit {
+    grid-area: "Btn";
+
+  }
+}
+
+@media (min-width: $control_width1) {
+  .searchForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  } 
+}
+
+@media (max-width: $control_width2) {
+  .searchForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  } 
+}
+
+
+.searchForm {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+} 
+.searchForm__origin {
+
+}
+
+.searchForm__destination {
+
+}
+.searchForm__dates {
+
+}
+.searchForm__btnSubmit {
+  text-align: center;
+  @include h3;
+  outline-width: 0;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  &:focus {
+    outline-width: 1px;
+    outline-color: $color1;
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  $border: 2px;
+  box-sizing: border-box;
+  padding: 12px 18px 13px 18px;
+  color: $color2;
+  border: $border solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  background-clip: padding-box;
+  z-index: 1;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: inherit;
+  }
+  &::before {
+    z-index: -1;
+    background: $colorBcg;
+  }
+  &::after {
+    z-index: -2;
+    margin: -$border;
+    @include linearGradient(background, $color2, $color2Gradiend);
+  }
+  &:disabled {
+    opacity: 1;
+    &::before {
+      opacity: 0.5;
+    }
+  }
+}

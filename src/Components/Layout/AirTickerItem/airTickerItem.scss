@@ -1,0 +1,48 @@
+@import "../../UI/baseStyle.scss";
+
+.airTickerItem {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+.airTickerItem__price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $color2;
+  display: flex;
+  align-items: center;
+
+}
+.airTickerItem__airline {
+  
+}
+.flightInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+}
+.flightInfo__Item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  &:last-child {
+    text-align: end;
+  }
+  & > * {
+    &:first-child {
+      color: $color1Opacity25;
+    }
+    &:last-child {
+      color: $color1;
+    }
+  }
+}
+
+.AirTickerItem__bookingModal {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

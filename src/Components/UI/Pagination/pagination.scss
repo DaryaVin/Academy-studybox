@@ -1,0 +1,135 @@
+@import "../baseStyle.scss";
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-width: $width;
+  color: $color1Opacity50;
+  &.pagination_disabled {
+    opacity: 0.5;
+  }
+}
+.pagination__buttonsBlock {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:center;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+}
+.pagination__button,
+.pagination__dots {
+  width: 40px;
+  height: 40px;
+  display: flexbox;
+  justify-content:center;
+  align-items: center;
+  & > * {
+    background: $colorBcg;
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    border: 0;
+    color: inherit;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:center;
+    align-items: center;
+  }
+}
+.pagination__button {
+  &.pagination__button_currentPage {
+    & > * {
+      @include linearGradient("background", $color2, $color2Gradiend);
+      color: $colorBcg;
+    }
+  }
+  & > * {
+    &:hover:not(:disabled), &:focus {
+      font-size: 120%;
+      cursor: pointer;
+    }
+  }
+}
+.pagination__button_prevButton,
+.pagination__button_nextButton {
+  & > *  {
+    @include linearGradient("background", $color3, $color3Gradiend);
+    svg {
+      fill: $colorBcg;
+      width: 18px;
+      height: 18px;
+      path {
+        fill: $colorBcg;
+      }
+    }
+  }
+}
+
+.pagination__paging {
+  margin-top: 20px;
+  .paginationjs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .paginationjs-pages {
+    text-align: center;
+    margin-bottom: 10px;
+    ul > * {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      a {
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 15px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+  .paginationjs-page {
+    &.active {
+      border-radius: 50%;
+      @include linearGradient("background", $color2, $color2Gradiend);
+      a {
+        color: $colorBcg;
+      }
+    }
+  }
+  .paginationjs-next {
+    border-radius: 50%;
+    @include linearGradient("background", $color3, $color3Gradiend);
+    a {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      position: relative;
+      min-width: 20px;
+      min-height: 20px;
+      &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -10px;
+        background: $colorBcg;
+        // -webkit-mask: url("../../img/arrow_forward.svg") no-repeat center / cover;
+        // -moz-mask: url("../../img/arrow_forward.svg") no-repeat center / cover;
+        // mask: url("../../img/arrow_forward.svg") no-repeat center / cover;
+      }
+    }
+  }
+}

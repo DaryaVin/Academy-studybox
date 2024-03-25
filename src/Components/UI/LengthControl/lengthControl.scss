@@ -1,0 +1,31 @@
+@import "../baseStyle.scss";
+
+.lengthControlComponent {
+  position: relative;
+  display: inline-block;
+  min-width: 0.5em;
+  min-height: 1em;
+}
+.lengthControlComponent__mainElement {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  color:inherit;
+}
+.lengthControlComponent__lengthDefinitionElement {
+  padding: 0;
+  position: relative;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: transparent;
+  line-height: inherit;
+  text-align: inherit;
+}
